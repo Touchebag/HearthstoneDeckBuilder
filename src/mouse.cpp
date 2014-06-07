@@ -1,11 +1,14 @@
 #include "mouse.h"
 
-void moveMouse(int x, int y){
+void moveMouse(double x, double y){
+  int nx = round(x * 65535.0);
+  int ny = round(y * 65535.0);
+
   INPUT Input={0};
   Input.type = INPUT_MOUSE;
 
-  Input.mi.dx = x;
-  Input.mi.dy = y;
+  Input.mi.dx = nx;
+  Input.mi.dy = ny;
 
   Input.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE;
 
