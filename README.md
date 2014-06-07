@@ -1,7 +1,7 @@
 HearthstoneDeckBuilder
 ======================
 
-An application for saving and rebuilding decks in Hearthstone
+An application for saving and rebuilding decks in Hearthstone. For now it is specific to windows.
 
 ###Compilation
 You will need to have g++ installed to be able to compile the project. Compiling the program is done via the (extremely simple) makefile. Just run "make" (without the quotes) from the root directory of this project. 
