@@ -23,7 +23,8 @@ void readDeck(std::string file){
 
   std::string card;
   while (std::getline(infile, card)){
-    std::cout << card;
+    addCard(card);
+    Sleep(500);
   }
 
   infile.close();
