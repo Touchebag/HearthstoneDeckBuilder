@@ -33,10 +33,45 @@ void readDeck(std::string file){
   std::string card;
 
   while (std::getline(infile, card)){
-    addCard(card);
-    Sleep(500);
+    parseLine(card);
   }
 
   // Close file
   infile.close();
+}
+
+// Parses a single line from a file
+int parseLine(std::string line){
+  std::string command;
+
+  // Check for comment
+  command = line.substr(0,1);
+  if (command == "/")
+    return(COMMENT);
+
+  // Check for deck name
+  command = line.substr(0,1);
+  if (command == "#"){
+    int tmp = line.find(' ', 0);
+    std::string name = line.substr(tmp);
+
+    // Make sure name actually exists
+    if (name.length() > 1){
+      // Extract name
+      name = name.substr(1);
+      // Input name
+      moveMouse(0.78, 0.07);
+      clickMouse();
+      Sleep(200);
+      typeString(name);
+    }
+
+    return(RENAMED_DECK);
+  }
+
+  // std::cout << command;
+  addCard(line);
+  Sleep(500);
+
+  return(CARD_ADDED);
 }

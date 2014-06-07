@@ -8,6 +8,14 @@
 #include "mouse.h"
 #include "keyboard.h"
 
+// Messages from parseline
+enum {
+  CARD_ADDED,
+  RENAMED_DECK,
+  COMMENT,
+  MARKDOWN_TAG,
+};
+
 // Adds two of the same card with less delay
 void addCard(std::string);
 // Adds a card to the deck
@@ -15,5 +23,8 @@ void addTwoCards(std::string);
 
 // Reads a deck from a file
 void readDeck(std::string);
+
+// Parses a single line from a file
+int parseLine(std::string);
 
 #endif
