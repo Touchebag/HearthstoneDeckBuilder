@@ -5,14 +5,17 @@
 
 #include "keyboard.h"
 #include "mouse.h"
+#include "deck.h"
 
 int main(int argc, char *argv[]){
   // Pause for 5 seconds.
-  // Sleep(5000);
+  Sleep(5000);
 
-  // typeString("Ysera");
-
-  moveMouse(32768,32768);
+  // Allow for specifing a custom deck file
+  if (argc > 1)
+    readDeck(argv[1]);
+  else
+    readDeck("deck.txt");
 
   // Exit normally
   return 0;
