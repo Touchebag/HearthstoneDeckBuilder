@@ -11,9 +11,9 @@
 // Messages from parseline
 enum {
   CARD_ADDED,
+  CARDS_ADDED,
   RENAMED_DECK,
   COMMENT,
-  MARKDOWN_TAG,
 };
 
 // Adds two of the same card with less delay

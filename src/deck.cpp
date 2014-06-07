@@ -46,12 +46,10 @@ int parseLine(std::string line){
 
   // Check for comment
   command = line.substr(0,1);
-  if (command == "/")
+  if (command == "/" || command == "")
     return(COMMENT);
-
   // Check for deck name
-  command = line.substr(0,1);
-  if (command == "#"){
+  else if (command == "#"){
     int tmp = line.find(' ', 0);
     std::string name = line.substr(tmp);
 
@@ -66,7 +64,21 @@ int parseLine(std::string line){
       typeString(name);
     }
 
+    Sleep(500);
     return(RENAMED_DECK);
+  }
+  // Check for number of cards
+  else if (command == "1"){
+    std::string card = line.substr(2);
+    addCard(card);
+    Sleep(500);
+    return(CARD_ADDED);
+  }
+  else if (command == "2"){
+    std::string card = line.substr(2);
+    addTwoCards(card);
+    Sleep(500);
+    return(CARD_ADDED);
   }
 
   // std::cout << command;
