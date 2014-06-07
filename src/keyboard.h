@@ -3,7 +3,6 @@
 
 #define WINVER 0x0500
 #include <windows.h>
-#include <string>
 #include <iostream>
 
 void pressKey(char);
