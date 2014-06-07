@@ -5,5 +5,6 @@
 #include <windows.h>
 
 void moveMouse(int, int);
+void clickMouse();
 
 #endif
