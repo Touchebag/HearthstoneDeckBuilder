@@ -2,6 +2,13 @@
 
 // Adds two of the same card with less delay
 void addTwoCards(std::string card){
+  // Try to add golden version first
+  addGoldCard(card);
+  Sleep(200);
+  clickMouse();
+  Sleep(200);
+
+  // Add regular version
   addCard(card);
   Sleep(200);
   clickMouse();
@@ -20,6 +27,22 @@ void addCard(std::string card){
 
   // Add card to deck
   moveMouse(0.2,0.3);
+  clickMouse();
+}
+
+// Adds a golden card to the deck
+void addGoldCard(std::string card){
+  // Move mouse to search window
+  moveMouse(0.5,0.92);
+  clickMouse();
+  Sleep(500);
+
+  // Input card name
+  typeString(card);
+  Sleep(500);
+
+  // Add card to deck
+  moveMouse(0.35,0.3);
   clickMouse();
 }
 
