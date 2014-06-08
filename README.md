@@ -13,7 +13,11 @@ First start Hearthstone and begin creating a new deck. You must have selected a 
 
 Just run the program via the command line with a path to a file. If no file is specified (or if run via explorer) it will assume there's a file named "deck.txt" in the current directory.
 
+Hearthstone must be in fullscreen but should work with multiple resolutions.
+
 The program will wait for five seconds to allow you to switch to Hearthstone.
+
+_Note:_ Other delays are hard coded (for now) so you need to have a reasonably fast computer.
 
 ###Deck file format:
 The format of a deck files is based on the Cocaktrice format exported from https://hearthpwn.com and is subsequently able to read Cockatrice files out of the box. Just copy and paste into a text file and you're golden.
