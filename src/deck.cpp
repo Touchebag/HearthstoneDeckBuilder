@@ -1,4 +1,4 @@
-#include "deck.h"
+#include "../include/deck.h"
 
 // Adds two of the same card with less delay
 void addTwoCards(std::string card){

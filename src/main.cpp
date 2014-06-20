@@ -3,9 +3,9 @@
 #define WINVER 0x0500
 #include <windows.h>
 
-#include "keyboard.h"
-#include "mouse.h"
-#include "deck.h"
+#include "../include/keyboard.h"
+#include "../include/mouse.h"
+#include "../include/deck.h"
 
 int main(int argc, char *argv[]){
   // Pause for 5 seconds.

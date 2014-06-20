@@ -1,4 +1,4 @@
-#include "keyboard.h"
+#include "../include/keyboard.h"
 
 // Sends a single keystroke
 void pressKey(char key){
