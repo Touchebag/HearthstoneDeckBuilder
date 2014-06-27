@@ -26,7 +26,7 @@ void addCard(std::string card){
   Sleep(500);
 
   // Add card to deck
-  moveMouse(0.2,0.3);
+  moveMouse(0.17,0.3);
   clickMouse();
 }
 
@@ -42,7 +42,7 @@ void addGoldCard(std::string card){
   Sleep(500);
 
   // Add card to deck
-  moveMouse(0.35,0.3);
+  moveMouse(0.3,0.3);
   clickMouse();
 }
 
