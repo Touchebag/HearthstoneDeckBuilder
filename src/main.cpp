@@ -8,15 +8,32 @@
 #include "../include/deck.h"
 
 int main(int argc, char *argv[]){
-  // Pause for 5 seconds.
-  Sleep(5000);
+  while (true){
+    std::cout << "Hi mom!";
+    int option;
+    std::cin >> option;
 
-  // Allow for specifing a custom deck file
-  if (argc > 1)
-    readDeck(argv[1]);
-  else
-    readDeck("deck.txt");
+    switch (option){
+      case 1:
+        // Pause for 5 seconds.
+        Sleep(5000);
 
-  // Exit normally
-  return 0;
+        // Allow for specifing a custom deck file
+        if (argc > 1)
+          readDeck(argv[1]);
+        else
+          readDeck("deck.txt");
+        break;
+      case 0:
+        // Exit normally
+        return 0;
+        break;
+      case 2:
+        std::cout << "TBI";
+        break;
+      default:
+        std::cout << "Unrecognised option";
+        break;
+    }
+  }
 }
