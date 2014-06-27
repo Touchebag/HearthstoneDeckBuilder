@@ -9,7 +9,10 @@
 
 int main(int argc, char *argv[]){
   while (true){
-    std::cout << "Hi mom!";
+    std::cout << "[0] Exit"  << std::endl <<
+      "[1] Create a deck"    << std::endl <<
+      "[2] Write a deckfile" << std::endl <<
+      "Choose an option: ";
     int option;
     std::cin >> option;
 
