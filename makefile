@@ -1,17 +1,19 @@
 # Compiler options
 CC       := g++
 CC_FLAGS :=
-LD_FLAGS :=
+LD_FLAGS := -L $(LIB_DIR)
 
 # Directories
 SRC_DIR := src
 INC_DIR := include
 OBJ_DIR := obj
+LIB_DIR := lib
 
 # Files
-SRC := $(wildcard $(SRC_DIR)/*.cpp)
-INC := $(wildcard $(INC_DIR)/*.h)
+SRC := $(wildcard  $(SRC_DIR)/*.cpp)
+INC := $(wildcard  $(INC_DIR)/*.h)
 OBJ := $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.cpp=.o)))
+LIB := $(wildcard  $(LIB_DIR)/*)
 
 # Executable
 TARGET := HSDeckBuilder.exe
