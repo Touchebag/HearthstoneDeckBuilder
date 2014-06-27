@@ -1,4 +1,4 @@
-#include "mouse.h"
+#include "../include/mouse.h"
 
 void moveMouse(double x, double y){
   int nx = round(x * 65535.0);
