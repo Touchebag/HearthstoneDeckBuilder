@@ -23,6 +23,12 @@ void addCard(std::string);
 // Adds a golden card to the deck
 void addGoldCard(std::string);
 
+// Types a card name in the search box
+void searchCard(std::string card);
+
+// Clicks on the standard (false) or golden (true) version of a card
+void clickCard(std::string card, bool golden);
+
 // Reads a deck from a file
 void readDeck(std::string);
 
