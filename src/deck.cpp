@@ -2,36 +2,41 @@
 
 // Adds two of the same card with less delay
 void addTwoCards(std::string card){
+  // Search for the card
+  searchCard(card);
+
   // Try to add golden version first
-  addGoldCard(card);
+  clickCard(card, true);
   Sleep(200);
   clickMouse();
   Sleep(200);
 
   // Add regular version
-  addCard(card);
+  clickCard(card, false);
   Sleep(200);
   clickMouse();
 }
 
 // Adds a card to the deck
 void addCard(std::string card){
-  // Move mouse to search window
-  moveMouse(0.5,0.92);
-  clickMouse();
-  Sleep(500);
-
-  // Input card name
-  typeString(card);
-  Sleep(500);
+  //Search for card
+  searchCard(card);
 
   // Add card to deck
-  moveMouse(0.17,0.3);
-  clickMouse();
+  clickCard(card, false);
 }
 
 // Adds a golden card to the deck
 void addGoldCard(std::string card){
+  //Search for card
+  searchCard(card);
+
+  // Add card to deck
+  clickCard(card, true);
+}
+
+// Types a card name in the search box
+void searchCard(std::string card){
   // Move mouse to search window
   moveMouse(0.5,0.92);
   clickMouse();
@@ -40,11 +45,19 @@ void addGoldCard(std::string card){
   // Input card name
   typeString(card);
   Sleep(500);
+}
 
-  // Add card to deck
-  moveMouse(0.3,0.3);
+// Clicks on the standard (false) or golden (true) version of a card
+void clickCard(std::string card, bool golden){
+  // Move pointer to either golden or regular card
+  if (golden)
+    moveMouse(0.3,0.3);
+  else
+    moveMouse(0.17,0.3);
+
   clickMouse();
 }
+
 
 // Reads a deck from a file
 void readDeck(std::string file){
