@@ -1,6 +1,6 @@
 # Compiler options
 CC       := g++
-CC_FLAGS :=
+CC_FLAGS := -enable-auto-import -Wall
 LD_FLAGS := -L $(LIB_DIR)
 
 # Directories
@@ -20,7 +20,7 @@ TARGET := HSDeckBuilder.exe
 
 # Main target
 $(TARGET): $(OBJ)
-	$(CC) -o $@ $^
+	$(CC) $(CC_FLAGS) -o $@ $^
 
 # Main source file (no header)
 $(OBJ_DIR)/main.o: $(SRC_DIR)/main.cpp
@@ -32,7 +32,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(INC_DIR)/%.h
 
 # Clean target
 clean:
-	rm -rf obj/*
+	rm -rf $(OBJDIR)/*
 
 # Phony targets
 .PHONY: clean
