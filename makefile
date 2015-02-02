@@ -32,7 +32,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp $(INC_DIR)/%.h
 
 # Clean target
 clean:
-	rm -rf obj/*
+	rm -rf $(OBJ) $(TARGET)
 
 # Phony targets
 .PHONY: clean
